@@ -1,13 +1,21 @@
 import './App.scss';
-import Selection from './components/Selection/Selection';
+import { BrowserRouter as Router, Routes, Route, } from 'react-router-dom';
+import Doctor from './components/Doctor/Doctor';
+import Admin from './components/Admin/Admin';
+import Home from './components/Home/Home';
+
+
 
 
 function App() {
-  
   return (
-    <div>
-      <Selection />
-    </div>
+    <Router>
+        <Routes>
+          <Route path='/' element={<Home/>}/>
+          <Route path='doctor' element={<Doctor/>}/>
+          <Route path='admin' element={<Admin/>}/>
+        </Routes>
+    </Router>
   );
 }
 
