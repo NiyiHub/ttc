@@ -1,5 +1,4 @@
 @import url('https://fonts.cdnfonts.com/css/proxima-nova-2');
-
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
 $accent-color:#40BFC0;
@@ -13,3 +12,10 @@ $green-gradient: linear-gradient(180deg, #00B0B1 30.05%, #23DADB 100%);
 
 $proxima-nova: 'Proxima Nova', sans-serif;
 $Roboto-font: 'Roboto', sans-serif;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
