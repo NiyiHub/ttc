@@ -4,9 +4,6 @@ import Doctor from './components/Doctor/Doctor';
 import Admin from './components/Admin/Admin';
 import Home from './components/Home/Home';
 
-
-
-
 function App() {
   return (
     <Router>

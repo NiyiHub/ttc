@@ -9,7 +9,7 @@ const Choice = lazy(
         resolve(
           import('../Choice/Choice')
         )
-      }, 5500)  
+      }, 5500)  //5500
     })
   )
 
