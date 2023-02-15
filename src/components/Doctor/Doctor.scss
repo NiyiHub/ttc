@@ -1,0 +1,242 @@
+@import '../variables.scss';
+
+.form-canvas{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: $background-gradient;
+    padding: 4rem 2rem;
+
+    .top{
+        height: 150px;
+    }
+    // signIn form
+    .form-container{
+        .sign-in-form{
+            display: grid;
+            gap: 1rem;
+            margin: 2rem 0rem;
+            
+            div{
+                display: grid;
+                gap: .75rem;        
+                label{
+                    display: block;
+                }
+
+                .field{
+                    position: relative;
+                    display: grid;
+
+                    input{
+                        height: 50px;
+                        border: $input-borders;
+                        border-radius: $input-radius;
+                    }
+
+                    img{
+                        position: absolute;
+                        width:32px;
+                        opacity: 0.8;
+                        left: 8px;
+
+                    }
+                }
+
+                &:nth-of-type(2){
+                    .field{
+                        input{
+                            padding-right: 44px;
+                        }
+                        img{
+                            &:last-of-type{
+                                left: unset;
+                                right: 10px;
+                                top: 6px;
+                                z-index: 10;
+                                background-color: $color-white;
+                                height: 38px;
+                                opacity: 1;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+
+                &:nth-of-type(3){
+                    margin-top: .5rem;
+                    text-decoration: underline;
+                    color: #979797;
+                    font-weight: 500;
+                }
+
+                &:nth-of-type(4){
+                    margin-top: 2rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    .btn{
+                        width: 18rem;
+                    }
+                }
+            }
+        }
+    }
+    // SignIn form
+
+    // Sign-up form
+    .sign-up-form{
+        display: grid;
+        gap: 1rem;
+        margin: 2rem 0rem;
+
+        div{
+            display: grid;
+            gap: .25rem;
+            font-family: $Roboto-font;
+            label{
+                display: block;
+                font-weight: 400;
+            }
+            input, select{
+                height: 40px;
+                border-radius: $input-radius;
+                border: $input-borders;
+                padding-left: 10px;
+                background-color: $color-white;
+                font-size: 1rem;
+                
+                &[type='date']{
+                    height: 40px;
+                    width: 100%;
+                }
+            }
+            .field{
+                position: relative;
+                display: grid;                   
+                input{
+                    padding-right: 44px;
+                }
+                img{
+                    position: absolute; 
+                    left: unset;
+                    top: 4px;
+                    right: 10px;
+                    width: 32px;
+                    height: 32px;
+                    z-index: 10;
+                    background-color: $color-white;
+                    opacity: 1;
+                    cursor: pointer;
+                }
+            }
+
+            &:nth-last-of-type(2){
+                margin:2rem 0 ;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 7px;
+                label{
+                    font-family: $poppins-font;
+                    
+                }
+                input[type='checkbox']{
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+        }
+    }
+    // Sign-up form
+    .option{
+        text-align: center;
+        font-size: 1.125rem;
+        margin-bottom: 4rem;
+        margin-top: 1rem;
+        font-weight: 200;
+        font-family: $Roboto-font;
+        cursor: pointer;
+        
+        span{
+            margin-left: .5rem;
+            cursor: pointer;
+        }
+    }
+    .bottom{
+        height: 150px;
+    }
+}
+
+@media screen and (min-width:600px){
+    .form-canvas{
+        .form-container{
+            .sign-in-form{
+                place-content: center;
+                div{
+                    width: 30rem;
+
+                    &:nth-of-type(4){
+                        .btn{
+                            width: 20rem;
+                        }
+                    }
+                }
+            }
+            .sign-up-form{
+                grid-template-columns: repeat(2, 1fr);
+                row-gap: 1.5rem;
+                
+                div{
+                    &:nth-last-of-type(3){
+                        grid-area: 5 / 1 / span 1 / span 1;
+                        place-content: left;
+                    }
+                    &:nth-last-of-type(2){
+                        place-content: center;
+                        grid-area: 6 / 1 / span 1 / span 2
+                    }
+                    &:nth-of-type(11){
+                        grid-area: 7 / 1 / span 1/ span 2; 
+                        place-content: center;
+                    }
+                }         
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .form-canvas{
+        .form-container{
+            .sign-up-form{
+                
+               grid-template-columns: repeat(3, 1fr);
+
+
+               div{
+                    &:nth-last-of-type(3){
+                        grid-area: unset;
+                        place-content: unset;
+                    }
+                    &:nth-last-of-type(2){
+                        place-content: center;
+                        grid-area: 4 / 1 / span 1 / span 3
+                    }
+                    &:nth-of-type(11){
+                        grid-area: 5 / 1 / span 1/ span 3; 
+                        place-content: center;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width:1200px) {
+    .form-canvas{
+        .form-container{
+            padding: 0 8.75rem;
+        }
+    }
+}
