@@ -1,0 +1,19 @@
+@import '../variables.scss';
+
+.main-coat{
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;   
+    height: 100vh;
+
+    aside.side-bar{
+        grid-column: 1 /span 1;
+        background-color: $btn-color;
+    }
+    main{
+        grid-column: 2 / span 1;
+        background: $app-gradient;
+    }
+    aside.notifications{
+        background: $background-gradient;
+    }
+}

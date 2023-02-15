@@ -1,0 +1,62 @@
+@import '../../variables.scss';
+
+nav{
+    font-family: $Roboto-font;
+    display: flex;
+    flex-direction: column;
+    // padding:4rem 6rem;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    gap: 2rem;
+
+    .profile{
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+        font-size: 18px;
+        font-weight: 500;
+        padding: 0 1rem 1rem;
+        color: $color-white;
+        img{
+            border-radius: 50%;
+        }
+    }
+
+    .divider{
+        height: 2px;
+        background-color: #dadada;
+        width: 70%;
+        opacity: 0.55;        
+    }
+    
+    .nav-link{
+        text-decoration: none;
+        color: $color-white;
+        align-self: flex-start;
+        // width: 100%;
+        padding: .25rem 10% .25rem 15% ;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        font-family: $Roboto-font;
+        font-size: 20px;
+        border-top-right-radius:22px;
+        border-bottom-right-radius:22px;
+
+        .nav-icon{
+           width:24px;
+           height: 22px; 
+        }
+        
+        svg{
+            fill: white;
+            height: 22px;
+        }
+
+
+    }
+
+
+}
