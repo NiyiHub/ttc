@@ -10,7 +10,7 @@ nav{
     padding-top: 1rem;
     padding-bottom: 1rem;
     gap: 1rem;
-    // height: 100vh;
+    
     
 
     .profile{
@@ -46,6 +46,7 @@ nav{
         border-top-right-radius:22px;
         border-bottom-right-radius:22px;
         transition: 0.3s ease-in-out;
+        position: relative;
 
         .nav-icon{
            width:24px;
@@ -55,6 +56,21 @@ nav{
         svg{
             fill: white;
             height: 22px;
+        }
+
+        &::after{
+            content: "";
+            position: absolute;
+            left: -2px;
+            transition:0.1s;
+            border-top-right-radius:24px;
+            border-bottom-right-radius:24px;
+        }
+        
+        &:hover::after{
+            padding: 15px 0px;
+            border: 1px solid rgba(255, 255, 255, 0.475);
+            width: 100%;
         }
 
 
