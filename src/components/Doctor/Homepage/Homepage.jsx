@@ -3,8 +3,6 @@ import './Homepage.scss'
 import { newsLetter } from '../data/Newsletter'
 import Cover from '../images/image.svg'
 import { Link } from 'react-router-dom'
-import Requests from '../images/icons/request-icon.svg'
-import Patients from '../images/icons/patients-icon.svg'
 import { Icon } from '@iconify/react'
 import { patientData } from '../data/Patients'
 
@@ -60,12 +58,10 @@ const Homepage = () => {
           </div>
           <div className="b-content">
             <Link className='btns'>
-              <img src={Requests} alt="" />
-              Requests
+             
             </Link>
             <Link className='btns'>
-              <img src={Patients} alt="" />
-              Patients
+              
             </Link>
           </div>
         </section>

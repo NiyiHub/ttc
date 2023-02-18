@@ -72,10 +72,6 @@
                 }
             }
         }
-        .b-content{
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-        }
     }
     .bottom{
         display: grid;
@@ -94,33 +90,59 @@
                     border-bottom: 2px solid $btn-color;
                 }     
                 .b-content{
-                    display: grid;
-                    grid-template-columns: repeat(2, 1fr);                    
+                    // display: grid;
+                    // grid-template-columns: repeat(2, 1fr);                    
+                    display: flex;
                     justify-content: space-between;
+                    gap: 1.5rem;
+                    padding: 0 0.5rem;
+                    
                     .btns{
-                        background-color: $btn-color;
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: center;
-                        align-items: center;
+                        position: relative;
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-color: rgb(131, 129, 129);
+                        background-blend-mode: multiply;
+                        height: 140px;
+                        width: 100%;
+                        text-align: center;
                         text-decoration: none;
                         color: $color-white;
                         align-content: center;
-                        height: 125px;
-                        width: 125px;
                         border-radius: $btn-radius;
-                        transition: 0.3s;
-
-                        &:hover{
-                            box-shadow: -2px -3px 25px 0px rgba(46, 188, 188, 0.491);
-                            -webkit-box-shadow: -2px -3px 25px 0px rgba(46, 188, 188, 0.491);
-                            -moz-box-shadow: -2px -3px 25px 0px rgba(46, 188, 188, 0.491);
+                        &::after{
+                            position: absolute;
+                            left: 0;
+                            right: 0;
+                            bottom: 12px;
+                            font-size: 1.5rem;
+                            font-weight: 500;
+                            letter-spacing: 1px;
+                            transition: 0.3s;
+                        }
+                        
+                        &:hover::after{
+                            bottom: 50px;
                         }
 
-                        img{
-                            height: 48px;
-                            width: 48px;
+
+                        &:first-of-type{
+                            background-image: url('../images/requests.jpg');
+                            &::after{
+                                content: "Requests";
+                            }
                         }
+                        &:last-of-type{
+                            background-image: url('../images/patients.jpeg');
+                            &::after{
+                                content: "Patients";
+                            }
+                        }
+                        
+                        
+
+                        
                     }
                 }
             }
