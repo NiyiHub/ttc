@@ -1,33 +1,91 @@
 import React from 'react'
 import './Homepage.scss'
-import Hello from '../images/hello.svg' 
+import { newsLetter } from '../data/Newsletter'
+import Cover from '../images/image.svg'
+import { Link } from 'react-router-dom'
+import Requests from '../images/icons/request-icon.svg'
+import Patients from '../images/icons/patients-icon.svg'
+import { Icon } from '@iconify/react'
+import { patientData } from '../data/Patients'
 
 const Homepage = () => {
   return (
-    <div className="main-coat">
+    <div className="sub-coat">
       <header>
+        <div className="mobile-btn">
+          <button>
+            <img src="" alt="" />
+          </button>
+        </div>
         <div className="main-text">
-          Welcome 
-          <span><img src={Hello} alt="" /></span>
-          Dr Jennifer Jaiye
+          Welcome, <br /> Dr. Jennifer Jaiye 
+          {/* <span><img src={Hello} alt="" /></span> */}
+        </div>
+        <div className="notifications-btn">
+          <button>
+            <img src="" alt="" />
+          </button>
         </div>
       </header>
       <section>
         <div className="main-text">
           Newsletters
         </div>
-        <div className="content">
-          
+        <div className="t-content">
+          <img src={Cover} alt="Best and worst places to see in 2022" />
+          {
+            newsLetter.slice(0, 2).map((news,index)=>(
+              <div className="image" key={index}>
+                <img src={news.source} alt="" />
+              </div>
+            ))
+          }
+        </div>
+        <div className="link">
+          <Link className='nav-icon'>
+            See More 
+            <Icon           
+              icon="ic:baseline-keyboard-double-arrow-right"
+              className='arrow' 
+            />
+          </Link>
         </div>
       </section>
-      <section>
-        <div className="main-text"></div>
-        <div className="content"></div>
-      </section>
-      <section>
-        <div className="main-text"></div>
-        <div className="content"></div>
-      </section>
+      <div className="bottom">
+        <section>
+          <div className="main-text">
+            Quick Access
+          </div>
+          <div className="b-content">
+            <Link className='btns'>
+              <img src={Requests} alt="" />
+              Requests
+            </Link>
+            <Link className='btns'>
+              <img src={Patients} alt="" />
+              Patients
+            </Link>
+          </div>
+        </section>
+        <section>
+          <div className="main-text">
+            Today's Patient
+          </div>
+          <div className="content">
+            {
+              patientData.map((patient, idx)=>(
+                <div className="cover" key={idx}>
+                  <img src={patient.image} alt="" />
+                  <div className="info">
+                    <p>{patient.name}</p>
+                    <p>{patient.activity} <span></span> {patient.time}</p>
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+        </section>
+      </div>
     </div>
   )
 }

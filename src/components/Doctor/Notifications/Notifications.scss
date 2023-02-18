@@ -1,0 +1,48 @@
+@import '../../variables.scss';
+
+.notifications{
+    
+    padding: 1rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    font-family: $poppins-font;
+    gap: 1rem;
+    overflow-y: hidden;
+
+    
+
+    .notif{
+        background-color: $color-white;
+        padding: 0.5rem;
+        p{
+            font-weight: 400;
+            &:first-of-type{
+                font-size: 14px;
+                line-height: 0.5cm;
+            }
+            &:last-of-type{
+                font-size: 10px;
+                margin-bottom: .5rem;
+                font-weight: 400;
+                color: #7e8381;
+            }
+        }
+        .btn-notification{
+            font-weight: 500;
+            text-decoration: none;
+            font-size: 12px;
+            color: $color-white;
+            padding: 0.25rem 1rem;
+            background-color: $btn-color;
+            border-radius: $input-radius;
+
+            transition: 0.3s;
+            &:hover{
+                background-color: $color-white;
+                border: 1px solid $btn-color;
+                color: $btn-color;
+            }
+        }
+    }
+}

@@ -4,15 +4,14 @@ nav{
     font-family: $Roboto-font;
     display: flex;
     flex-direction: column;
-    // padding:4rem 6rem;
     align-items: center;
     justify-content: center;
     padding-top: 1rem;
     padding-bottom: 1rem;
     gap: 1rem;
-    
-    
-
+    position: fixed;
+    width: 250px;
+    z-index: 10;
     .profile{
         display: flex;
         flex-direction: column;

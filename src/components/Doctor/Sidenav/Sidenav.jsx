@@ -17,7 +17,7 @@ const Sidenav = () => {
             <span className="divider"></span>
         <NavLink
             className='nav-link'
-            to={'main'}
+            to={''}
             onClick={
                 ({isActive})=>console.log({isActive})
             }

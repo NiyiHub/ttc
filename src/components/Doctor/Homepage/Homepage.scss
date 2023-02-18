@@ -1,0 +1,174 @@
+@import '../../variables.scss';
+
+.sub-coat{
+    font-family: $Roboto-font;
+    padding: 1rem 2rem;
+    
+    header{
+        // display: grid;
+        // grid-template-columns: repeat(3, 1fr);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+
+        .mobile-btn,
+        .notifications-btn{
+            display: none;
+        }
+
+        .main-text{
+            font-size: 24px;
+            font-weight: 500;
+            align-self: flex-start;
+            color: $sub-headers;
+        }
+    }
+    section{
+        .main-text{
+            font-size: 20px;
+            font-weight: 400;
+            margin-bottom: 2rem;
+            padding-bottom: 3px; 
+            color: $sub-headers;
+            border-bottom: 2px solid $btn-color;
+        }
+        .t-content{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .link{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+
+            .nav-icon{
+                background-color: $btn-color;
+                // font-size: ;
+                padding: .75rem 2rem;
+                border-radius: $btn-radius;
+                text-decoration: 
+                none;
+                color: $color-white;
+                display: flex;
+                align-items: center;
+                font-weight: 400;
+                .arrow{
+                    font-size: 22px;
+                }
+                
+                cursor: pointer;
+                transition: 0.3s ease;
+            
+            
+                &:hover,&:focus{
+                    background-color: $color-white;
+                    box-shadow: inset 0px 0px 0px 1px $btn-color;
+                    color: $btn-color;
+                }
+            }
+        }
+        .b-content{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    .bottom{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-content: center;
+        gap: 2rem;
+        
+        section{
+            &:first-of-type{
+                
+                .main-text{
+                    font-size: 20px;
+                    font-weight: 400;
+                    margin-bottom: 2rem;
+                    padding-bottom: 3px; 
+                    color: $sub-headers;
+                    border-bottom: 2px solid $btn-color;
+                }     
+                .b-content{
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);                    
+                    justify-content: space-between;
+                    .btns{
+                        background-color: $btn-color;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        text-decoration: none;
+                        color: $color-white;
+                        align-content: center;
+                        height: 125px;
+                        width: 125px;
+                        border-radius: $btn-radius;
+                        transition: 0.3s;
+
+                        &:hover{
+                            box-shadow: -2px -3px 25px 0px rgba(46, 188, 188, 0.491);
+                            -webkit-box-shadow: -2px -3px 25px 0px rgba(46, 188, 188, 0.491);
+                            -moz-box-shadow: -2px -3px 25px 0px rgba(46, 188, 188, 0.491);
+                        }
+
+                        img{
+                            height: 48px;
+                            width: 48px;
+                        }
+                    }
+                }
+            }
+
+            &:last-of-type{
+                
+                display: grid;
+                .content{
+                    display: grid;
+                    grid-template-columns: repeat(4, 1fr) ;
+                    
+                    justify-items: center;
+                    
+                    .cover{
+                        max-height: 150px;
+                        max-width: 100px;
+                        position: relative;
+                        .info{
+                            position: absolute;
+                            background: rgba(0, 176, 176, 0.73);
+                            bottom: 0px;
+                            width: 100%;
+                            border-bottom-left-radius: 10px;
+                            border-bottom-right-radius: 10px;
+                            color: $color-white;
+                            text-align: center;
+                            height: 50px;
+                            font-family: $proxima-nova;
+                            font-size: 14px;
+                            transition: all 0.3s ease;
+                            padding-top: 8px;
+                            p{
+                                &:last-of-type
+                                {
+                                    font-size: 12px;
+                                }
+                            }
+                        }
+                        &:hover{
+                            .info{
+                                height: 70px;
+                                background: rgba(33, 123, 123, 0.73);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -34,7 +34,7 @@
             
             &:hover,&:focus{
                 background-color: $color-white;
-                border: 1px solid $btn-color;
+                box-shadow: $border-box-shadow;
                 color: $btn-color;
             }
             

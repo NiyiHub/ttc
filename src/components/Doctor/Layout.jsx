@@ -1,6 +1,7 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 import './Layout.scss';
+import Notifications from './Notifications/Notifications';
 import Sidenav from './Sidenav/Sidenav';
 
 
@@ -14,7 +15,7 @@ const Layout = () => {
         <Outlet/>
       </main>
       <aside className="notifications">
-          
+          <Notifications/>
       </aside>        
     </div>
   )
