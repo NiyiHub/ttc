@@ -151,8 +151,8 @@ function SignupForm(){
       <div>
           {/* turn these elements to router links */}
         <Link
-        className={isAgreed ? 'btn' : 'btn-disabled'}
-        disabled={isAgreed}
+          className={isAgreed ? 'btn' : 'btn-disabled'}
+          disabled={isAgreed}
         >Continue</Link>
       </div>
     </form>
@@ -163,7 +163,7 @@ function SignupForm(){
 
 const Doctor = () => {
   const [isSignUp, setIsSignUp] = useState(false);
-
+  
   return (
     <div className="form-canvas">
       <div className="top">
@@ -172,7 +172,7 @@ const Doctor = () => {
       <div className="form-container">
         {
           isSignUp ?
-          <SignupForm/> :<SignInForm/>
+          <SignupForm/>:<SignInForm/>
         }
       </div>
       <div className="option">

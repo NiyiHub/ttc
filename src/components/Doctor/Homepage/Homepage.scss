@@ -5,12 +5,11 @@
     padding: 1rem 2rem;
     
     header{
-        // display: grid;
-        // grid-template-columns: repeat(3, 1fr);
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
-        margin-bottom: 2rem;
+        margin: 1.5rem 0;
+        padding: 0 2.5rem;
 
         .mobile-btn,
         .notifications-btn{
@@ -20,8 +19,8 @@
         .main-text{
             font-size: 24px;
             font-weight: 500;
-            align-self: flex-start;
             color: $sub-headers;
+
         }
     }
     section{
@@ -111,6 +110,8 @@
                         color: $color-white;
                         align-content: center;
                         border-radius: $btn-radius;
+                        
+
                         &::after{
                             position: absolute;
                             left: 0;
@@ -195,8 +196,8 @@
     .sub-coat{
         header{
             align-items: center;
-            justify-content: unset;
-            gap: 3rem;
+            justify-content: center;
+            // gap: 3rem;
             button{
                 background: none;
                 border: none;
@@ -212,21 +213,6 @@
     }
 }
 
-@media screen and (max-width:1200px) {
-    .sub-coat{
-        header{
-            justify-content: space-between;
-            .notifications-btn{
-                display: block;
-                button{
-                    background: $color-white;
-                    padding: 1rem 1.125rem;
-                    border-radius: 50%;
-                }
-            }
-        }
-    }
-}
 
 @media screen and (max-width:1000px){
     .sub-coat{

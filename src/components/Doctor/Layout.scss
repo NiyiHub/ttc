@@ -4,30 +4,95 @@
     display: grid;
     grid-template-columns: 0.95fr 4fr 1.05fr;   
     min-height: 100vh;
-
-    aside.side-bar{
-        grid-column: 1 /span 1;
-        background-color: $btn-color;
+    overflow-x: hidden;
+    position: relative;
+    button{
+        background: none;
+        border: none;
     }
+    .mobile-btn{
+        z-index: 50;
+        left: 1.5rem;
+        top: 38px;
+        position: fixed;
+        display: none;
+        
+        button{
+            cursor: pointer;
+            svg{
+               .lines{
+                fill: white;
+               }
+            }
+        }
+    }
+    aside{
+        &:first-of-type, 
+            &:last-of-type
+            {
+                grid-column: 1 /span 1 ;
+                position: absolute;
+                height: 100vh;
+                background-color: $btn-color;
+                z-index: 30;
+            }
+
+            &:last-of-type{
+                position: unset;
+                grid-column: 3 / span 1;
+                
+            }
+        }   
+
     main{
         grid-column: 2 / span 1;
         background: $app-gradient;
     }
-    aside.notifications{
-        background: $btn-color;
-
-    }
+    .notifications-btn{
+        position: absolute;
+        z-index: 50;
+        right: 1.125rem;
+        top: 35px;
+        display: none;
+    }    
 }
 
 
 @media screen and (max-width:1400px){
     .main-coat{
+        .mobile-btn{
+            display: block;
+            button{
+                svg{
+                    .lines{
+                        fill:#607D8B;
+                        &.white{
+                            fill: #fff;
+                        }
+                    }
+                }
+            }
+        }
+        aside.open{
+            transform: translateX(-250px);
+            transition: 0.5s; 
+        }
         aside.side-bar{
-            display: none;
+            transform: translateX(0px);
+            transition: 0.5s;
         }
         main{
             grid-column: 1 / span 2;
+
+            &.choked{
+                position: fixed;
+                width: 100%;
+                background-color: rgb(131, 129, 129);
+                background-blend-mode: multiply;
+                pointer-events: none;
+            }
         }
+
     }
 }
 
@@ -35,8 +100,31 @@
     .main-coat{
         grid-template-columns: repeat(1, 1fr);
         background: $app-gradient;
-        aside.notifications{
-            display: none;
+
+        .notifications-btn{
+            display: block;
+            button{
+                background: $color-white;
+                padding: .75rem .75rem;
+                border-radius: 50%;
+                border: 1px solid rgb(147, 147, 147);
+            }
+        }
+        aside{
+            &:last-of-type{
+                position: absolute;
+                z-index: 20;
+                right: 0px;
+                transform: translateX(500px);
+                transition: 0.3s;
+                width: 300px;
+                padding-top: 5.5rem;
+                
+            }
+            &:last-of-type.notification{
+                transform: translateX(0px);
+                transition: 0.3s;
+            }
         }
     }
 }
