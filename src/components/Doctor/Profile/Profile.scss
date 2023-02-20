@@ -1,0 +1,130 @@
+@import '../../variables.scss';
+     // Sign-up form
+div{
+    .title{
+        text-align: center;
+        margin-top: 2.5rem;
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .sign-up-form{
+        display: grid;
+        padding: 1rem 2rem;
+        gap: 1rem;
+        margin: 2rem 0rem;
+        
+        div{
+
+            &:first-of-type{
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                img{
+                    border-radius: 50%;
+                    height: 90px;
+                    width: 90px;
+                }
+                .plus{
+                    position: absolute;
+                    height: 42px;
+                    width: 42px;
+                    left: 53%;
+                    top: 50px;
+                }
+            }
+            display: grid;
+            gap: .25rem;
+            font-family: $Roboto-font;
+            label{
+                display: block;
+                font-weight: 400;
+                color: rgba(0, 0, 0, 0.5)
+            }
+            input, select{
+                height: 40px;
+                border-radius: $input-radius;
+                border: $input-borders;
+                padding-left: 10px;
+                background-color: $color-white;
+                font-size: 1rem;
+                
+                &[type='date']{
+                    height: 40px;
+                    width: 100%;
+                }
+            }
+            textarea{
+                font-family: inherit;
+                font-size: 1rem;
+                padding-top: 5px;
+                padding-left: 10px;
+                border-radius: $input-radius;
+                border: $input-borders;
+                resize: none;
+                height: 100px;
+            }
+            .field{
+                position: relative;
+                display: grid;                   
+                input{
+                    padding-right: 44px;
+                }
+                img{
+                    position: absolute; 
+                    left: unset;
+                    top: 4px;
+                    right: 10px;
+                    width: 32px;
+                    height: 32px;
+                    z-index: 10;
+                    background-color: $color-white;
+                    opacity: 1;
+                    cursor: pointer;
+                }
+            }
+    
+            &:nth-last-of-type(){
+            .btn{
+                background-color: $accent-color;
+                width: 20rem;
+                &:hover{
+                    background-color: white;
+                }
+            }
+        }
+    }
+}
+// Sign-up form
+
+@media screen and (min-width:600px) {
+    div{
+        .sign-up-form{
+            padding: 0 3rem;
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 1.5rem;
+            div{
+                margin-top: .5rem;
+                &:first-of-type{
+                    grid-area: 1 /span 2;
+                }
+                &:nth-of-type(2){
+                    grid-area: 2 /span 2;
+                }
+                &:last-of-type{
+                    grid-column: 1 / span 2;
+                    margin-top: 2rem;
+                    place-content: center;
+                    .btn{
+                        background-color: $accent-color;
+                        width: 20rem;
+                        &:hover{
+                            background-color: white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+}
